@@ -6,6 +6,7 @@ package com.javalesson.chapter1.task1;
  *  <code>Scanner scanner = new Scanner(System.in);</code>
  *  <code>scanner.nextInt();</code>
  */
+import java.util.Scanner;
 public class TriangleTask {
 
     public static void main(String[] args) {

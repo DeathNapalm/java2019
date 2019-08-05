@@ -1,5 +1,6 @@
 package com.javalesson.chapter1.task0;
 
+import java.util.Scanner;
 
 /**
  * Создайте программу, которая будет принимать две группы параметров:
@@ -30,6 +31,24 @@ package com.javalesson.chapter1.task0;
 public class LoopTask {
 
     public static void main(String[] args) {
-        
+
+        System.out.println("Please enter the number of iterations");
+        Scanner in = new Scanner(System.in);
+        int programCycles = in.nextInt();
+        for(int i=0; i < programCycles; i++){
+            System.out.println("Enter the group of 3 numbers");
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            int accumulator = a;
+            for(int j = 0;j< n; j++) {
+                int x = (int)Math.pow(2,j);
+                accumulator = accumulator + x * b;
+                System.out.print(accumulator+" ");
+
+            }
+            System.out.println();
+        }
+        in.close();
     }
 }
