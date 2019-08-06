@@ -32,7 +32,7 @@ public class TriangleTask {
         for (double sight : sights) {
             notbiggest = notbiggest + sight;
         };
-        
+
         System.out.println(notbiggest >= biggest);
         }
     }
