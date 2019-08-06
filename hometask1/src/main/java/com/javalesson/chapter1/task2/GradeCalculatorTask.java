@@ -32,7 +32,7 @@ package com.javalesson.chapter1.task2;
 public class GradeCalculatorTask {
 
     public static void main(String[] args) {
-        System.out.println("for a pr!");
+        System.out.println("for a pr from intellij idea!");
 
     }
 }
