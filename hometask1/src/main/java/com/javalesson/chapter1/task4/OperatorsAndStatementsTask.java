@@ -45,7 +45,7 @@ public class OperatorsAndStatementsTask {
      * переменную num на странность и вернет нам значение:
      * <p>
      * - Strange если num не четный
-     * - Normal если num четный и находится в диапазоне от 2 до 5
+     * - Normal если num четный и находится в диапазоне о 2 до 5
      * - Strange если num четный и находится в диапазоне от 6 до 20
      * - Normal если num четный и больше 20
      * Во всех остальных случаях метод может вернуть значение Undefined.
@@ -64,7 +64,13 @@ public class OperatorsAndStatementsTask {
      * и вызвав Run OperatorsTest.
      */
     static String checkStrangeness(int num) {
-        return null;
+        if (num % 2 != 0 || (num % 2 == 0 && (6 <= num && num <= 20))) {
+            return "Strange";
+        } else if (((num % 2 == 0 && (2 <= num && num <= 5)) || (num % 2 == 0 && num > 20))) {
+            return "Normal";
+        } else {
+            return "Undefined";
+        }
     }
 
 
@@ -86,7 +92,16 @@ public class OperatorsAndStatementsTask {
      * того же результата с помощью циклов while и do - while.
      * */
     private static void countNumTypes(String[] types) {
-
+        for (int i = 0; i < types.length; i++) {
+            switch (types[i]) {
+                case "Strange":
+                    strange++;
+                    break;
+                case "Normal":
+                    normal++;
+                    break;
+            }
+        }
     }
 
 
@@ -99,11 +114,11 @@ public class OperatorsAndStatementsTask {
          * */
         String[] numberTypes = new String[6];
         numberTypes[0] = checkStrangeness(3);
-        numberTypes[1] = checkStrangeness(3);
-        numberTypes[2] = checkStrangeness(3);
-        numberTypes[3] = checkStrangeness(3);
-        numberTypes[4] = checkStrangeness(3);
-        numberTypes[5] = checkStrangeness(3);
+        numberTypes[1] = checkStrangeness(24);
+        numberTypes[2] = checkStrangeness(4);
+        numberTypes[3] = checkStrangeness(5);
+        numberTypes[4] = checkStrangeness(29);
+        numberTypes[5] = checkStrangeness(100);
 
         return numberTypes;
     }
