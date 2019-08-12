@@ -28,11 +28,37 @@ package com.javalesson.chapter1.task2;
  * Вам нужно предложить 2 улучшения. По желанию можно реализовать их самостоятельно (не обязательно).
  * Подсказка: одно из них реализовать очень просто.
  * Для второго Вам могут понадобиться знания из раздела Обработка исключений в Java.
- */
+ **/
+import java.util.Scanner;
 public class GradeCalculatorTask {
 
     public static void main(String[] args) {
-        System.out.println("for a pr from intellij idea!");
+        Scanner input = new Scanner(System.in);
+//        System.out.println("for a pr from intellij idea!");
+        int total = 0;
+        int gradeCounter = 0;
+        Double averageGrade = 0.;
+        int maximumGrade = 5;
+        int minimumGrade = 0;
+//        String outputString = "Сумма оценок = %d: \n" +
+//                                " Средняя оценка = %f:";
+
+        while(input.hasNextInt()){
+            int currentGrade = input.nextInt();
+            if(!(currentGrade > minimumGrade && currentGrade <= maximumGrade)){
+                System.out.println("Некорpектная оценка");
+                String outputString = String.format("Сумма оценок = %d: \n" +
+                        " Средняя оценка = %f:", total, averageGrade);
+                System.out.println(outputString);
+                continue;
+            }
+            total = total + currentGrade;
+            gradeCounter++;
+            averageGrade = (double) total/ gradeCounter;
+            String outputString = String.format("Сумма оценок = %d: \n" +
+                    " Средняя оценка = %f:", total, averageGrade);
+            System.out.println(outputString);
+        }
 
     }
 }
